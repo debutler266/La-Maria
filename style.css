@@ -336,3 +336,83 @@ justify-content: center;
 .body-btn:focus::before {
   background-color: var(--main-font-color-dark);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tasteful-recipes {
+  background: url('img/recipes.jpg') center no-repeat;
+  background-size: cover;
+}
+
+.between {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.discover-our-menu .restaurant-description {
+  padding-top: 3rem;
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.perfect-blend {
+  background: url('img/blend.jpg') center no-repeat;
+  background-size: cover;
+}
