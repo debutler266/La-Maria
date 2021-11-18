@@ -14,6 +14,7 @@
 
 body {
   font-family: 'Nanum Gothic', sans-serif;
+  overflow-x: hidden;
 }
 
 html {
@@ -24,6 +25,7 @@ html {
 
 section {
   padding: 3.9rem 0;
+  overflow: hidden;
 }
 
 img { /*makes sure even if img is too big for a section, it won't overflow the parent container*/
@@ -173,6 +175,9 @@ header {
   font-weight: 100;
   line-height: 0.9;
   letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 0.7s forwards;
+  animation-delay: 0.7s;
 }
 
 .first-letter {
@@ -187,6 +192,7 @@ header {
   font-weight: 900;
   letter-spacing: 0.5rem;
   margin-right: -0.5rem;
+  animation: scale 0.7s forwards;
 }
 
 .line {
@@ -195,6 +201,9 @@ header {
   background-color: #ffffff;
   position: relative;
   width: 100%;
+  opacity: 0; /* hides line before animation*/
+  animation: grow 3.8s forwards;
+  animation-delay: .9s;
 }
 
 .separator {
@@ -210,6 +219,9 @@ justify-content: center;
   top: 50%;
   transform: translateY(-50%);
   border: 0.6rem solid transparent;
+  animation: grow 0.5s forwards;
+  animation-delay: 1.3s;
+  opacity: 0;
 }
 
 .line-right::before {
@@ -226,6 +238,15 @@ justify-content: center;
   font-size: 1.2rem;
   color: var(--secondary-font-color);
   margin: 0 1.6rem;
+  opacity: 0;
+  animation: spin 0.7s forwards;
+  animation-delay: 1.5s;
+}
+
+.single-animation {
+  opacity: 0;
+  animation: fadeDown 0.5s forwards;
+  animation-delay: 1.8s;
 }
 
 .headline-description h5 {
@@ -442,10 +463,11 @@ footer {
   font-size: 2rem;
   padding: 2rem;
   color: #ffffff;
+  animation: up 2.3s infinite;
 }
 
 .footer-content {
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .footer-content h4 {
@@ -637,3 +659,90 @@ footer {
         margin-left: -6.5rem;
       }
     }
+
+
+
+
+
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  0%{
+    transform: translateY(4rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+
+@keyframes scale {
+  0%{
+    transform: scale(2);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+@keyframes grow {
+  0%{
+    width: 0;
+  }
+
+  100%{
+    opacity: 1;
+    width: 100%;
+  }
+
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+  }
+
+  100%{
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+
+}
+
+
+@keyframes fadeDown {
+  0%{
+    transform: translateY(-1rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes up {
+  0%{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+}
