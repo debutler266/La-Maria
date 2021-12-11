@@ -660,6 +660,11 @@ footer {
       }
     }
 
+@media screen and (max-width: 425px) {
+  .sub-headline {
+    font-size: 6rem;
+  }
+}
 
 
 
